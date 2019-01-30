@@ -1,0 +1,9 @@
+<html>
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+    <canvas height="600" width="600" id="slate"> </canvas>
+  </body>
+</html>
