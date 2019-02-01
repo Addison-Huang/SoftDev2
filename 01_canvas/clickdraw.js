@@ -1,7 +1,7 @@
-//Addison Huang
+//Addison Huang & Mohtasim Howlader -- team gist do it
 //SoftDev 2 pd8
-//K00 -- I See a Red Door
-//2019-01-31
+//K01 -- and I want to paint it better
+//2019-02-01
 
 //variables
 var state="box" //default state of draw is box
@@ -54,3 +54,11 @@ function tog() {
     }
     console.log("You are now in " + state + " state"); //logs the state to the console
 };
+
+
+/*
+offsetX - offset of the X coordinate of the mouse  between the event and the left padding
+offsetY - offset of the Y coordinate of the mouse between the event and the top padding
+beginPath() - resets the current path and creates a new one
+preventDefault() - cancels the event
+*/
