@@ -1,0 +1,4 @@
+var c = document.getElementbyId("playground");
+var ctx= c.getContext("2d");
+var state = 1;
+var isStopped = false;
