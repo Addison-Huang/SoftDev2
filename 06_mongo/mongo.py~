@@ -1,0 +1,13 @@
+'''
+Team Apple Wine -- Johnny and Addison
+SoftDev2 pd8
+K#06 --Yummy Mongo Py
+2019-03-01
+'''
+
+import pymongo
+
+SERVER_ADDR="lisa.stuy.edu"
+connection = pymongo.MongoClient(SERVER_ADDR)
+db=connection.test
+collection = db.restaurant
