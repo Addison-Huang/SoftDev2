@@ -12,10 +12,13 @@ SoftDev2 pd8
   <body>
 
     Search for Nobel Prize Winners by Name
-    <form>
+    <form action="/" method="POST">
       <input type="text" name="name" id="name">
       <input type="submit" name="submit" id="submit">
     </form>
-    
+
+    <div id="results">
+      {{results}}
+</div>
   </body>
 </html>
