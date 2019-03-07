@@ -1,7 +1,7 @@
 '''
+Team Git Flasking -- Addison Huang, Matthew Ming, and Hasif
 SoftDev2 pd8
-K 
-
+K #08: Ay Mon, Go Git It From Yer Flask
 '''
 
 from flask import Flask, render_template, request
@@ -27,6 +27,6 @@ def root():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    app.run(host="0.0.0.0")
 
 
