@@ -4,22 +4,24 @@ K
 
 '''
 
-from flask import Flask, render_template
-from util import 
+from flask import Flask, render_template, request
+from util import search 
 
 app=Flask(__name__)
 
 
 @app.route("/", methods=['GET','POST'])
-def root():
+def root():    
     try:
-        if request.form['name'] == "":
+        name = request.form['name']
+        print(name)
+        if name == "":
             return render_template("index.html", results = "You did not submit a query")
         #result = function
-        else if not result:
+        elif not search.result(name):
             return render_template("index.html", results = "Your search did not yield any results")
         else:
-            return render_template("index.html", results = result)
+            return render_template("index.html", results = search.result(name))
     except:
         return render_template("index.html", results = "")
 
