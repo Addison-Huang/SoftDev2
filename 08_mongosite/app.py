@@ -14,7 +14,9 @@ app=Flask(__name__)
 def root():    
     try:
         name = request.form['name']
-        print(name)
+        ip = request.form['ip']
+        if ip != "":
+            search.changeIp(ip)
         if name == "":
             return render_template("index.html", results = "You did not submit a query")
         #result = function

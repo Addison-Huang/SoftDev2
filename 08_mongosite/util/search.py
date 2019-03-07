@@ -17,3 +17,15 @@ def result(name):
         if name==i:
             return name
     return False
+
+def changeIp(ip):
+    myclient = pymongo.MongoClient("mongodb://"+ip+":5000")
+    db = myclient["test"]
+    collection = db["prize"]
+
+    with open('./static/prizes.json') as doc:
+        file_data = json.load(doc)
+
+    collection.insert(file_data)
+    client.close()
+    print("hi")
