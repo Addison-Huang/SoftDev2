@@ -11,12 +11,15 @@ app=Flask(__name__)
 
 
 @app.route("/", methods=['GET','POST'])
-def root():    
+def root():
     try:
-        name = request.form['name']
         ip = request.form['ip']
         if ip != "":
             search.changeIp(ip)
+    except:
+        pass
+    try:
+        name = request.form['name']
         if name == "":
             return render_template("index.html", results = "You did not submit a query")
         #result = function
@@ -29,6 +32,6 @@ def root():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host="0.0.0.0")
+    app.run()#host="0.0.0.0")
 
 

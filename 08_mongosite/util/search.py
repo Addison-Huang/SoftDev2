@@ -1,9 +1,13 @@
-import pymongo
+from pymongo import MongoClient
+import json
 
 SERVER_ADDR= "206.189.227.59"
-connection = pymongo.MongoClient(SERVER_ADDR)
-db = connection.test
+#connection = pymongo.MongoClient(SERVER_ADDR)
+client = MongoClient(SERVER_ADDR, 27017)
+db = client.test
 collection = db.prize
+#db = connection.test
+#collection = db.prize
 
 def result(name):
     data=list(collection.find({"prizes.year":"2018"},{'_id': False}))
@@ -19,13 +23,13 @@ def result(name):
     return False
 
 def changeIp(ip):
-    myclient = pymongo.MongoClient("mongodb://"+ip+":5000")
-    db = myclient["test"]
-    collection = db["prize"]
-
-    with open('./static/prizes.json') as doc:
+    print("hi1")
+    with open('../data/prizes.json') as doc:
+        print("hi")
         file_data = json.load(doc)
-
-    collection.insert(file_data)
-    client.close()
+        print("hi")
+        client.drop_database(prize)
+        print("hi")
+        collection.insert_many(file_data['prizes'])
     print("hi")
+    client.close()
