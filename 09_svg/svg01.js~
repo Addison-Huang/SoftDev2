@@ -1,0 +1,9 @@
+var pic =document.getElementById("vimage");
+var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+c.setAttribute("cx",offsetX);
+c.setAttribute("cy",offsetY);
+c.setAttribute("r","100");
+c.setAttribute("fill", "red");
+c.setAttribute("stroke", "black");
+
+pic.appendChild(c);
