@@ -1,0 +1,17 @@
+#goes through list A and returns if its in B
+def intersection(A,B):
+    return [x for x in A if x in B]
+
+print(intersection([1,2,3],[2,3,4]))
+
+#goes through list A and returns it if its not in B
+def setdiff(A, B):
+    return [x for x in A if not x in B]
+
+print(setdiff([2,3,4], [1,2,3]))
+
+#uses setdiff twice
+def sym(A, B):
+    return setdiff(A, B) + setdiff(B, A)
+
+print(sym([1,2,3], [2,3,4]))
