@@ -2,44 +2,22 @@
 Team Zadical -- Zane Wang and Addison Huang
 Softdev2 pd8
 K20
-2019-04-18
+2019-04-29
 '''
 
-import re
-from functools import reduce
-punctuation = "!@#$%^&*(),./;'\" "
+import re, functools
 
-book = open("utc.txt","r").read()
-book = book.lower()
-bookL = re.findall(r'\w+', book)
-book = " ".join(bookL)
-test = ["the", "the", "hi", "the","the", "and", "the","hi","the","the"]
+with open("utc.txt", "rU") as txt:
+     text = txt.read()
 
-def wordFreq(word):
-    return len([x for x in book if x == word])
+def wordFreq(words):
+    return len([x for x in range(0, len(text) - len(words)) if text[x: x + len(words)] == words])
 
-print wordFreq("the")
+words = re.findall(r'\w+', text)
+phrase = list(set(word))
 
-#print(reduce((lambda x,y:x=="hi" and y=="the"),["hi","the"]))
+# this returns most frequent word in moby dick
+def mostFreq():
+    return functools.reduce(lambda a, b: a if a[1] > b[1] else b, [(x, words.count(x)) for x in phrase])
 
-def groupFreq(phrase):
-    words = phrase.split(" ")
-    counter = 0
-    amount = 0
-    for x in test:
-        if x == words[0]:
-            y = test[counter:counter+len(words)]
-            if y == words:
-              amount +=1
-        counter += 1
-    return amount
 
-print(groupFreq("the the"))
-
-def phraseFreq(phrase):
-    return len([x for x in range(0, len(book) - len(phrase)) if book[x:x + len(phrase)] == phrase])
-
-print(phraseFreq("there"))
-
-                
-        
