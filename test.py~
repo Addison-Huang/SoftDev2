@@ -1,0 +1,9 @@
+def outer(x):
+    def contains(l):
+        return x in l
+    return contains
+
+contains_15 = outer(15)
+print(contains_15([1,2,3,4,5]))
+print(contains_15([13,14,15,16,17]))
+print(contains_15(range(1,20)))
