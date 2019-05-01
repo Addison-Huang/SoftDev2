@@ -5,9 +5,9 @@ def make_HTML_heading(f):
         return '<h1>' + txt + '</h1>'
     return inner
 
-def greet()
+def greet():
     greetings = ['Hello', 'Welcome', 'AYO!', 'Hola', 'Bonjour', 'Word up']
     return random.choice(greetings)
 
-greet_heading = make_HTML_heading(greet())
-print(greet_heading)
+greet_heading = make_HTML_heading(greet)
+print(greet_heading())
