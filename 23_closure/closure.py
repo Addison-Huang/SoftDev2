@@ -10,7 +10,9 @@ def memoize(f):
     def helper(x):
         if x not in memo.keys():
             memo[x]=f(x)
-        return f(x)
+            return f(x)
+        else:
+            return memo[x]
     return helper
 
 def fib(n):
